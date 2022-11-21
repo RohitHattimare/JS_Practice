@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JSON to string</title>
+    <script>
+      //Function to convert JSON to string
+      function export2txt() {
+        const originalData = {
+          members: [
+            {
+              name: "cliff",
+              age: "34",
+            },
+            {
+              name: "ted",
+              age: "42",
+            },
+            {
+              name: "bob",
+              age: "12",
+            },
+          ],
+        };
+
+        const a = document.createElement("a");
+        a.href = URL.createObjectURL(
+          new Blob([JSON.stringify(originalData, null, 10)], {
+            type: "application/json",
+          })
+        );
+        a.setAttribute("download", "data.json");
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+      }
+    </script>
+  </head>
+  <body>
+    <button onclick="export2txt()">Export data to local txt file</button>
+  </body>
+</html>
