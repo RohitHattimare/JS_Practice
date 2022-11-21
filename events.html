@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+    <h2>JavaScript HTML Events</h2>
+    <p>Click the button to display the date.</p>
+
+    <button onclick="displayDate()">The time is?</button>
+    <script src="time.js"></script>
+    <script>
+
+        function displayDate() {
+            // let d = new Date();
+            document.getElementById("demo").innerHTML = currentTime();
+        }
+    </script>
+
+    <p id="demo"></p>
+
+</body>
+
+</html>
